@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://thieleafo.org/thymeleaf-extras-springsecurity3">
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Ingreso</title>
+	    <link rel="stylesheet" th:href="@{../Estilo/Css/Estilo.css}" href="../static/Estilo/Css/Estilo.css"/>
+	</head>
+	<body>
+		<div th:if="${#httpServletRequest.remoteUser == null}" class="login-container">
+			<img th:src="@{../Recursos/Img/Svg/login.svg}" href="../static/Recursos/Img/Svg/login.svg" alt="Portada De Acceso" class="img-container">
+			<div class="login-info-container">
+				<h1 class="titulo">Ingresar con</h1>
+				<div class="social-login">
+					<div class="social-login-element">
+						<img th:src="@{../Recursos/Img/Svg/google.svg}" href="../static/Recursos/Img/Svg/google.svg" alt="Logo De Google"/>
+						<span>Google</span>
+					</div>
+					<div class="social-login-element">
+						<img th:src="@{../Recursos/Img/Svg/facebook.svg}" href="../static/Recursos/Img/Svg/facebook.svg" alt="Logo De Facebook"/>
+						<span>Facebook</span>
+					</div>
+				</div>
+				<p th:if="${param.error}"> Nombre de usuario o contraseña incorrectos </p>
+				<p th:if="${param.out}"> Usted ha cerrado sesion </p>
+				<form class="contenedores-inputs" th:action="@{/Ingreso}" method="post">
+					<input class="input" name="requestUser" type="text" placeholder="Nombre de usuario">
+		            <input class="input" name="requestPassword" type="password" placeholder="Contraseña">
+		            <button type="submit" class="btn">Iniciar sesión</button>
+		            <p>¿Olvidó la contraseña?, <span class="span">clic aquí</span></p>
+		            <p>¿No tienes una cuenta?, <span class="span">Regístrate</span></p>
+				</form>
+        	</div>
+		</div>
+		<div th:if="${#httpServletRequest.remoteUser != null}" class="message-container">
+			<b>Ya hay una sesión</b>
+			<p>Parece que ya has iniciado sesión, por favor elige la opcion que deseas realizar</p>
+			<div>
+				<form th:action="@{/Inicio}">
+					<button type="submit">Ir a inicio</button>
+				</form>
+				<form th:action="@{/logout}" method="post">
+					<button type="submit" class="decline-button">Cerrar sesión</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

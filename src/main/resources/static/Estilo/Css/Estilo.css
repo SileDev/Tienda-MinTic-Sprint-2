@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --login-bg: #ffffffbe;
+    --title-bg: #9089cc;
+    --button-bg: #674baf;
+    --button-bg-hover: #472b8f;
+    --light-pink: #e882e8;
+    --image-bg: #ffffff7f;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.login-container {
+    width: 900px;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+}
+
+.login-info-container {
+    width: 400px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--login-bg);
+}
+
+.login-info-container > hr{
+    margin: 20px 35px 25px;
+}
+
+.img-container {
+    width: 500px;
+    padding: 30px;
+    background-color: var(--image-bg);
+    box-sizing: border-box;
+}
+
+.titulo {
+    margin: 0;
+    padding: 20px;
+    text-transform: capitalize;
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color:  var(--title-bg);
+}
+
+.social-login {
+		display: flex;
+		padding: 10px 20px 20px;
+        justify-content: space-evenly;
+    }
+
+.social-login-element {
+    border-radius: 5px;
+    border: 1px solid var(--button-bg);
+    width: -webkit-fill-available;
+    margin: 0 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-login-element img {
+    width: 30px;
+    height: 30px;
+    padding-right: 10px;
+}
+
+.social-login-element:hover {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.login-info-container > p {
+    border-radius: 0;
+    background-color: palevioletred;
+    font-size: 14px;
+    margin: 0;
+    padding: 10px;
+    color: white;
+}
+
+.contenedores-inputs {
+	margin: 20px 40px 30px;
+	}
+
+.btn {
+   margin: 20px;
+   padding: 15px 40px;
+   font-size: 15px;
+}
+
+.input {
+	width: 100%;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+}
+
+.input:hover {
+	padding: 13px 18px;
+    border: 2px solid var(--button-bg);
+}
+
+.btn {
+    margin: 10px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    cursor: pointer;
+}
+
+.btn:hover {
+	background-color: var(--button-bg-hover);
+}
+
+.contenedores-inputs > p {
+    margin: 10px 0 0;
+}
+
+.span {
+    color: var(--light-pink);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-container {
+    width: 900px;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+}
+
+
+.message-container{
+	padding: 20px;
+	border-radius: 10px;
+	background-color: #ffffffbe;
+	text-align: center;
+}
+
+.message-container div{
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.message-container div form{
+	width: 40%;
+}
+
+.message-container button{
+	display: inline-block;
+	width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    background-color: var(--button-bg);
+    cursor: pointer;
+}
+
+.message-container .decline-button{
+	background-color: var(--title-bg);
+}
+
+/*************MEDIA QUERIES****************/
+@media screen and (max-width: 1000px) {
+    .img-container {
+        display: none;
+    }
+    
+    .login-container {
+        max-width: 450px
+    }
+
+    .login-info-container {
+        width: 100%;
+    }
+  
+}
+
+@media screen and (max-width: 768px) {
+	.social-login {
+		display: flex;
+		padding: 10px 20px;
+        flex-direction: column;
+    }
+    .login-container {
+        width: auto;
+    }
+    .social-login-element {
+    	margin: 5px 0;
+	}
+}
