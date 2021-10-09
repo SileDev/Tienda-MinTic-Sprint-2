@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.grupo2</groupId>
-	<artifactId>tienda</artifactId>
+	<artifactId>tiendaS2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tienda</name>
 	<description>Proyecto Min Tic</description>
